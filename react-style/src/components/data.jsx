@@ -1,0 +1,17 @@
+export const user_password = [
+  { userName: "Mergen", password: "Muhamedov" },
+  { userName: "Benji", password: "Kyncl" },
+  { userName: "Catarina", password: "Kingham" },
+  { userName: "Jamison", password: "Bridgstock" },
+  { userName: "Lianna", password: "Houseman" },
+  { userName: "Joleen", password: "Langfitt" },
+  { userName: "Valentine", password: "Guilloud" },
+  { userName: "Brandise", password: "Camocke" },
+  { userName: "Mergen", password: "865427084" },
+  { userName: "mergen", password: "865427084m." },
+  { userName: "Liz", password: "Life" },
+  { userName: "Solly", password: "Scripture" },
+  { userName: "Anne-corinne", password: "Trussman" },
+  { userName: "Danice", password: "Gwillym" },
+  { userName: "Drona", password: "834351231hsdf" },
+];

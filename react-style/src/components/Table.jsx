@@ -2,15 +2,21 @@ import { user_password } from "./data";
 import Trow from "./Trow";
 import { useState, useEffect } from "react";
 
-export default function Table({ bgColor, userId, isVisible }) {
+export default function Table({ bgColor, userid }) {
+  const [table, setTable] = useState({
+    myArray: user_password,
+    myColor: bgColor,
+    myId: userid,
+  });
   const [myArray, setMyArray] = useState(user_password);
   const [myColor, setMyColor] = useState(bgColor);
-  const [myId, setMyId] = useState(userId);
+  const [myId, setMyId] = useState(userid);
   ///-----------------------------------------------------------------------------------
+  // console.log(bgColor);
   useEffect(() => {
     setMyColor(bgColor);
-    setMyId(userId);
-  }, [bgColor, userId]);
+    setMyId(userid);
+  }, [bgColor, userid]);
   ///-------------------------------------------------------------------------------------
   const deleteHandler = (index) => {
     myId > index ? setMyId(myId - 1) : setMyId(myId);

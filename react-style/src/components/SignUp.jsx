@@ -80,9 +80,9 @@ export default function SignUp({ isVisible, sendDataToParent }) {
   return (
     <>
       <form
-        className={`${isVisible} justify-center mt-36 bg-gray-300 rounded-md border-solid border-gray-500 border-2`}
+        className={`${isVisible} justify-center mt-36 bg-gray-300 rounded-md border-solid border-gray-500 border-1`}
       >
-        <div className="grid grid-row-8">
+        <div className="grid grid-row-8 p-4">
           <div className="grid m-1 grid-cols-5 items-center">
             <div className="justify-self-center font-bold text-gray-600">
               <p>User Name</p>

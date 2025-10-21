@@ -90,6 +90,7 @@ export default function ExpenseItem() {
 
   ///---------------------------------------------------------------------------------------------------///
   return (
+<<<<<<< HEAD
 <<<<<<< HEAD:react-style/src/components/SignIn.jsx
     <div className="">
       <div className="flex justify-self-center  w-fit">
@@ -97,6 +98,10 @@ export default function ExpenseItem() {
     <>
       <div className="grid place-content-center ">
 >>>>>>> parent of c9c8266 (router-dom):react-style/src/components/ExpenseItem.jsx
+=======
+    <>
+      <div className="grid place-content-center ">
+>>>>>>> parent of c9c8266 (router-dom)
         <div className={`${logInfo.signInVisble} p-1 rounded-md `}>
           <form className="grid grid-row-6 mt-36 border-solid border-1 border-gray-500 bg-gray-300 rounded-lg justify-self-center">
             <div className="grid m-1 grid-cols-4">

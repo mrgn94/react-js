@@ -109,7 +109,7 @@ export default function SignIn({ setIsLoggedIn }) {
 
   ///---------------------------------------------------------------------------------------------------///
   return (
-    <>
+    <div className="">
       <div className="flex justify-self-center  w-fit">
         <div className={`${logInfo.signInVisble} p-1 rounded-md `}>
           <form className="grid grid-row-6 mt-36 border-solid border-1 border-gray-500 bg-gray-300 rounded-lg justify-self-center">
@@ -198,6 +198,6 @@ export default function SignIn({ setIsLoggedIn }) {
       <div className="">
         {/* <Table bgColor={logInfo.bgcolor} userid={logInfo.userId} /> */}
       </div>
-    </>
+    </div>
   );
 }

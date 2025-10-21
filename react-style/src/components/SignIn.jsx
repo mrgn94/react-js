@@ -109,8 +109,22 @@ export default function SignIn({ setIsLoggedIn }) {
 
   ///---------------------------------------------------------------------------------------------------///
   return (
-    <>
+<<<<<<< HEAD
+<<<<<<< HEAD:react-style/src/components/SignIn.jsx
+    <div className="">
       <div className="flex justify-self-center  w-fit">
+=======
+    <>
+<<<<<<< HEAD:react-style/src/components/SignIn.jsx
+      <div className="flex justify-self-center  w-fit">
+=======
+      <div className="grid place-content-center ">
+>>>>>>> parent of c9c8266 (router-dom):react-style/src/components/ExpenseItem.jsx
+=======
+    <>
+      <div className="grid place-content-center ">
+>>>>>>> parent of c9c8266 (router-dom)
+>>>>>>> 296222f0157534ad8a5ff2c02094b0f008000438:react-style/src/components/ExpenseItem.jsx
         <div className={`${logInfo.signInVisble} p-1 rounded-md `}>
           <form className="grid grid-row-6 mt-36 border-solid border-1 border-gray-500 bg-gray-300 rounded-lg justify-self-center">
             <div className="grid m-1 grid-cols-4">
@@ -198,6 +212,6 @@ export default function SignIn({ setIsLoggedIn }) {
       <div className="">
         {/* <Table bgColor={logInfo.bgcolor} userid={logInfo.userId} /> */}
       </div>
-    </>
+    </div>
   );
 }

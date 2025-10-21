@@ -1,7 +1,9 @@
 import { useState, useRef } from "react";
 import { user_password } from "./data";
+import { useNavigate } from "react-router-dom";
 
-export default function SignUp({ isVisible, sendDataToParent }) {
+export default function SignUp({ isVisible, setIsLoggedIn }) {
+  const navigate = useNavigate();
   const [userName, setUserName] = useState("");
   const [enterPassword, setEnterPassword] = useState("");
   const [reEnterPassword, setReEnterPassword] = useState("");
@@ -13,7 +15,8 @@ export default function SignUp({ isVisible, sendDataToParent }) {
   ///--------------------------------------------------------------------------------------------------------------///
   const cancelHandler = (e) => {
     e.preventDefault();
-    sendDataToParent("hidden");
+    setIsLoggedIn(true);
+    navigate("/");
     setUserName("");
     setEnterPassword("");
     setReEnterPassword("");
@@ -55,15 +58,17 @@ export default function SignUp({ isVisible, sendDataToParent }) {
       setPasswordBorder("ring-1 ring-red-500");
     } else {
       if (enterPassword == reEnterPassword && userNameValidation == "") {
-        sendDataToParent("hidden");
+        // sendDataToParent("hidden");
         user_password.push({
           userName: userName,
           password: enterPassword,
         });
+        setIsLoggedIn(true);
         setUserName("");
         setEnterPassword("");
         setReEnterPassword("");
-        sendDataToParent("hidden");
+        // sendDataToParent("hidden");
+        navigate("/");
         console.log(user_password);
       } else if (userNameValidation == "This username is already used") {
         // setUserNameValidation("");
@@ -80,7 +85,7 @@ export default function SignUp({ isVisible, sendDataToParent }) {
   return (
     <>
       <form
-        className={`${isVisible} justify-center mt-36 bg-gray-300 rounded-md border-solid border-gray-500 border-1`}
+        className={`${isVisible} flex justify-self-center mt-36 w-fit bg-gray-300 rounded-md border-solid border-gray-500 border-1`}
       >
         <div className="grid grid-row-8 p-4">
           <div className="grid m-1 grid-cols-5 items-center">

@@ -49,7 +49,7 @@ export default function Table({ setIsLoggedIn }) {
       <div className="flex justify-end">
         <p className="flex text-gray-600 p-2 px-20 font-extrabold text-lg">
           Welcome {username}
-          {"=="}
+          {"---"}
           {userpassword}
         </p>
         <button

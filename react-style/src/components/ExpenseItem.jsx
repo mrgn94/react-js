@@ -1,13 +1,11 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import Table from "./Table";
 import { user_password } from "./data";
 import SignUp from "./SignUp";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEye } from "@fortawesome/free-solid-svg-icons";
-import { useNavigate } from "react-router-dom";
 
-export default function SignIn({ setIsLoggedIn }) {
-  const navigate = useNavigate();
+export default function ExpenseItem() {
   const [logInfo, setLogInfo] = useState({
     userNameu: "",
     passwordu: "",
@@ -23,8 +21,6 @@ export default function SignIn({ setIsLoggedIn }) {
   ///------------------------------------------------------------------------------------------------///
   const signUpHandle = (event) => {
     event.preventDefault();
-    setIsLoggedIn(true);
-    navigate("/signup");
     setLogInfo((prev) => ({
       ...prev,
       signInVisble: "hidden",
@@ -65,7 +61,6 @@ export default function SignIn({ setIsLoggedIn }) {
         warning: "Please Enter User name and Password",
         borderColor: "border-red-400",
       }));
-      console.log("kullanici adi veya sifre bos");
     } else {
       {
         setLogInfo((prev) => ({ ...prev, warning: "" }));
@@ -81,36 +76,27 @@ export default function SignIn({ setIsLoggedIn }) {
             userId: user_password.indexOf(user) + 1,
             borderColor: "",
           }));
-
-          console.log("Giris yapildi");
-          setIsLoggedIn(true);
-          navigate("/table", {
-            state: {
-              username: logInfo.userNameu,
-              userpassword: logInfo.passwordu,
-              bgColor: logInfo.bgcolor,
-              userid: logInfo.userId,
-            },
-          });
         } else {
           setLogInfo((prev) => ({
             ...prev,
             warning: "Incorrect User name or Password",
             borderColor: "border-red-400 ",
           }));
-          console.log("Giris yapilmadi");
         }
         setLogInfo((prev) => ({ ...prev, userNameu: "", passwordu: "" }));
-        console.log(logInfo.bgcolor);
-        console.log(logInfo.userNameu);
       }
     }
   };
 
   ///---------------------------------------------------------------------------------------------------///
   return (
+<<<<<<< HEAD:react-style/src/components/SignIn.jsx
     <div className="">
       <div className="flex justify-self-center  w-fit">
+=======
+    <>
+      <div className="grid place-content-center ">
+>>>>>>> parent of c9c8266 (router-dom):react-style/src/components/ExpenseItem.jsx
         <div className={`${logInfo.signInVisble} p-1 rounded-md `}>
           <form className="grid grid-row-6 mt-36 border-solid border-1 border-gray-500 bg-gray-300 rounded-lg justify-self-center">
             <div className="grid m-1 grid-cols-4">
@@ -190,13 +176,13 @@ export default function SignIn({ setIsLoggedIn }) {
             </div>
           </form>
         </div>
-        {/* <SignUp
+        <SignUp
           isVisible={logInfo.registerVisible}
           sendDataToParent={handleDataFromChild}
-        /> */}
+        />
       </div>
       <div className="">
-        {/* <Table bgColor={logInfo.bgcolor} userid={logInfo.userId} /> */}
+        <Table bgColor={logInfo.bgcolor} userid={logInfo.userId} />
       </div>
     </div>
   );

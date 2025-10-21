@@ -1,34 +1,22 @@
-import { useLocation, useNavigate } from "react-router-dom";
 import { user_password } from "./data";
 import Trow from "./Trow";
 import { useState, useEffect } from "react";
 
-export default function Table({ setIsLoggedIn }) {
-  const navigate = useNavigate();
-  const location = useLocation();
-
-  const { username, userpassword, bgColor, userid } = location.state || {};
-
+export default function Table({ bgColor, userid }) {
+  const [table, setTable] = useState({
+    myArray: user_password,
+    myColor: bgColor,
+    myId: userid,
+  });
   const [myArray, setMyArray] = useState(user_password);
   const [myColor, setMyColor] = useState(bgColor);
   const [myId, setMyId] = useState(userid);
   ///-----------------------------------------------------------------------------------
-  console.log(location.state);
-
+  // console.log(bgColor);
   useEffect(() => {
     setMyColor(bgColor);
     setMyId(userid);
   }, [bgColor, userid]);
-
-  // useEffect(() => {
-  //   if (bgColor !== undefined) setMyColor(bgColor);
-  //   if (userid !== undefined) setMyId(userid);
-  // }, [bgColor, userid]);
-
-  const signOutHandler = () => {
-    setIsLoggedIn(false);
-    navigate("/");
-  };
   ///-------------------------------------------------------------------------------------
   const deleteHandler = (index) => {
     myId > index ? setMyId(myId - 1) : setMyId(myId);
@@ -46,21 +34,8 @@ export default function Table({ setIsLoggedIn }) {
   ///-------------------------------------------------------------------------------------
   return (
     <>
-      <div className="flex justify-end">
-        <p className="flex text-gray-600 p-2 px-20 font-extrabold text-lg">
-          Welcome {username}
-          {"-"}
-          {userpassword}
-        </p>
-        <button
-          onClick={signOutHandler}
-          className="flex bg-gray-600 text-white p-3 px-5 rounded-md justify-self-end"
-        >
-          Sign Out
-        </button>
-      </div>
-      <div className="justify-center h-screen mt-5 justify-items-center">
-        <table className="border border-separate  rounded-md border-none border-spacing-1 w-screen m-12 p-12">
+      <div className={`justify-center mt-5`}>
+        <table className="border w-full border-separate  rounded-md border-none border-spacing-1 ">
           <thead className=" ">
             <tr className="text-white">
               <th className="border border-gray-300 bg-gray-600  px-3 py-3 rounded-md ">

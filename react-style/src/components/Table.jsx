@@ -63,13 +63,13 @@ export default function Table({ setIsLoggedIn }) {
         <table className="border border-separate  rounded-md border-none border-spacing-1 w-screen m-12 p-12">
           <thead className=" ">
             <tr className="text-white">
-              <th className="border border-gray-300 bg-gray-600  px-3 py-3 rounded-md ">
+              <th className="border border-gray-600 bg-gray-600  px-3 py-3 rounded-md ">
                 Id
               </th>
-              <th className="border border-gray-300 bg-gray-600  px-6 py-3 rounded-md ">
+              <th className="border border-gray-600 bg-gray-600  px-6 py-3 rounded-md ">
                 User Name
               </th>
-              <th className="border border-gray-300 bg-gray-600  px-6 py-3 rounded-md ">
+              <th className="border border-gray-600 bg-gray-600  px-6 py-3 rounded-md ">
                 Password
               </th>
             </tr>

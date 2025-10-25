@@ -27,9 +27,18 @@ export default function SignUp({ isVisible, setIsLoggedIn }) {
   };
   ///--------------------------------------------------------------------------------------------------------------///
   const inputClickHandler = () => {
-    setBorderColor("");
-    setRegisterWarning("");
-    setPasswordBorder("");
+    if (
+      (borderColor == "ring-1 ring-red-500") &
+      (passwordBorder == "ring-1 ring-red-500")
+    ) {
+      setBorderColor("");
+      setRegisterWarning("");
+      setPasswordBorder("");
+      setUserNameValidation("");
+      setUserName("");
+      setReEnterPassword("");
+      setEnterPassword("");
+    }
   };
   ///----------------------------------------------------------------------------------------------------------------///
   const userNameHandler = (e) => {
@@ -75,6 +84,8 @@ export default function SignUp({ isVisible, setIsLoggedIn }) {
         setRegisterWarning("Pleas enter another user name");
       } else {
         setRegisterWarning("Please enter correct password");
+        setBorderColor("ring-1 ring-red-500");
+        setPasswordBorder("ring-1 ring-red-500");
       }
     }
   };
